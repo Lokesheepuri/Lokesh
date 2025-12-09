@@ -1,0 +1,69 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "LOKESH-DF-DEV"
+		},
+		"AzureSqlDatabase2_password": {
+			"value": ""
+		},
+		"SqlServer1_password": {
+			"value": ""
+		},
+		"lnk_adls_accountKey": {
+			"value": ""
+		},
+		"lnk_adlsgen2_accountKey": {
+			"value": ""
+		},
+		"lnk_azuresql_password": {
+			"value": ""
+		},
+		"onprem_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase2_properties_typeProperties_server": {
+			"value": "lokeshadmin.database.windows.net"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_database": {
+			"value": "LokeshDB"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_userName": {
+			"value": "lokeshadmin"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"value": "lokesh"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"value": "AdventureWorks2022"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"value": "lokeshh"
+		},
+		"lnk_adls_properties_typeProperties_url": {
+			"value": "https://adlslokesh.dfs.core.windows.net/"
+		},
+		"lnk_adlsgen2_properties_typeProperties_url": {
+			"value": "https://adlslokesh.dfs.core.windows.net/"
+		},
+		"lnk_azuresql_properties_typeProperties_server": {
+			"value": "lokeshadmin.database.windows.net"
+		},
+		"lnk_azuresql_properties_typeProperties_database": {
+			"value": "LokeshDB"
+		},
+		"lnk_azuresql_properties_typeProperties_userName": {
+			"value": "lokeshadmin"
+		},
+		"onprem_properties_typeProperties_server": {
+			"value": "LOKESH"
+		},
+		"onprem_properties_typeProperties_database": {
+			"value": "paradise"
+		},
+		"onprem_properties_typeProperties_userName": {
+			"value": "lokeshh"
+		}
+	}
+}
