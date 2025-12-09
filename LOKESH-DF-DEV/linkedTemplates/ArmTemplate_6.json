@@ -969,7 +969,7 @@
 									]
 								},
 								{
-									"name": "Copy data2",
+									"name": "audit_logs",
 									"type": "Copy",
 									"dependsOn": [
 										{
