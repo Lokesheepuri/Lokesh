@@ -1,5 +1,5 @@
 {
-	"name": "pl_allfiles",
+	"name": "new_getmeta",
 	"properties": {
 		"activities": [
 			{
@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "ds_src_metadata",
+						"referenceName": "ds_new_one",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
@@ -24,7 +24,6 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
-						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -77,9 +76,7 @@
 								"sink": {
 									"type": "AzureSqlSink",
 									"writeBehavior": "insert",
-									"sqlWriterUseTableLock": false,
-									"tableOption": "autoCreate",
-									"disableMetricsCollection": false
+									"sqlWriterUseTableLock": false
 								},
 								"enableStaging": false,
 								"translator": {
@@ -93,10 +90,10 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "src_ds_all",
+									"referenceName": "DelimitedText48",
 									"type": "DatasetReference",
 									"parameters": {
-										"filename": {
+										"file_name": {
 											"value": "@item().name",
 											"type": "Expression"
 										}
@@ -105,11 +102,15 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "snk_ds_all",
+									"referenceName": "snk_new",
 									"type": "DatasetReference",
 									"parameters": {
+										"schema": {
+											"value": "@substring(item().name,0 ,indexOf(item().name,'_' ))",
+											"type": "Expression"
+										},
 										"table": {
-											"value": "@substring(item().name, 0, lastIndexOf(item().name,'.csv' ))",
+											"value": "@substring(\n    item().name,\n    add(indexof(item().name, '_'), 1),\n    sub(lastIndexOf(item().name, '.'), add(indexof(item().name, '_'), 1))\n)\n",
 											"type": "Expression"
 										}
 									}
@@ -121,10 +122,8 @@
 			}
 		],
 		"folder": {
-			"name": "practice"
+			"name": "New sub"
 		},
-		"annotations": [],
-		"lastPublishTime": "2025-12-02T09:32:14Z"
-	},
-	"type": "Microsoft.DataFactory/factories/pipelines"
+		"annotations": []
+	}
 }
