@@ -2,11 +2,14 @@
 	"name": "src_dc_tables",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "lnk_azuresql",
+			"referenceName": "asql_lnk",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
 			"table": {
+				"type": "string"
+			},
+			"scema": {
 				"type": "string"
 			}
 		},
@@ -14,7 +17,10 @@
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "HumanResources",
+			"schema": {
+				"value": "@dataset().scema",
+				"type": "Expression"
+			},
 			"table": {
 				"value": "@dataset().table",
 				"type": "Expression"

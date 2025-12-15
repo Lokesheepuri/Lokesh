@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "select TABLE_NAME from INFORMATION_SCHEMA.tables\nwhere table_schema = 'HumanResources' and table_type = 'BASE TABLE';",
+						"sqlReaderQuery": "select TABLE_SCHEMA,TABLE_NAME from INFORMATION_SCHEMA.tables\nwhere table_schema = 'HumanResources' and table_type = 'BASE TABLE';",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -93,6 +93,10 @@
 										"table": {
 											"value": "@item().table_name",
 											"type": "Expression"
+										},
+										"scema": {
+											"value": "@item().TABLE_SCHEMA",
+											"type": "Expression"
 										}
 									}
 								}
@@ -103,7 +107,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"filename": {
-											"value": "@concat(item().TABLE_NAME,'.CSV')",
+											"value": "@concat(item().TABLE_SCHEMA,'_',item().TABLE_NAME,'.CSV')",
 											"type": "Expression"
 										},
 										"date": {
