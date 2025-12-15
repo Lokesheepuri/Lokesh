@@ -122,6 +122,9 @@
 				}
 			}
 		],
+		"folder": {
+			"name": "practice"
+		},
 		"annotations": [],
 		"lastPublishTime": "2025-11-28T11:06:29Z"
 	},
