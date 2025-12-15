@@ -197,7 +197,7 @@
 					"storedProcedureName": "[dbo].[Daily_recon_check]"
 				},
 				"linkedServiceName": {
-					"referenceName": "lnk_azuresql",
+					"referenceName": "asql_lnk",
 					"type": "LinkedServiceReference"
 				}
 			}

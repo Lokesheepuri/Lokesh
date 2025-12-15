@@ -2,7 +2,7 @@
 	"name": "DelimitedText45",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "lnk_adls",
+			"referenceName": "adls_lnk",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
@@ -19,8 +19,8 @@
 					"value": "@dataset().filename",
 					"type": "Expression"
 				},
-				"folderPath": "human_audit_recon",
-				"fileSystem": "loki"
+				"folderPath": "human-filess",
+				"fileSystem": "lokesh-con"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

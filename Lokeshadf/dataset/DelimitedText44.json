@@ -2,7 +2,7 @@
 	"name": "DelimitedText44",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "lnk_adls",
+			"referenceName": "adls_lnk",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,8 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "human_audit_recon",
-				"fileSystem": "loki"
+				"folderPath": "human-filess",
+				"fileSystem": "lokesh-con"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
