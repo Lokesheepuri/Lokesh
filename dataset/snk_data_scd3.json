@@ -1,0 +1,49 @@
+{
+	"name": "snk_data_scd3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azsql_3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "student_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "student_name",
+				"type": "varchar"
+			},
+			{
+				"name": "department",
+				"type": "varchar"
+			},
+			{
+				"name": "Marks",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "city",
+				"type": "varchar"
+			},
+			{
+				"name": "Hash_key",
+				"type": "nvarchar"
+			},
+			{
+				"name": "status",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "student"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "event_trigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pipeline2",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/lokesh333/blobs/trigger",
+			"blobPathEndsWith": "studentt.csv",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/6f4ad508-257c-4dfb-865e-58afc9874f5b/resourceGroups/lokesh-rg12/providers/Microsoft.Storage/storageAccounts/lokeshgen23",
+			"events": [
+				"Microsoft.Storage.BlobCreated",
+				"Microsoft.Storage.BlobDeleted"
+			]
+		}
+	}
+}
