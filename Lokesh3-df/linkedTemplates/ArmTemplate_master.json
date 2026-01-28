@@ -1,0 +1,201 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "Lokesh3-df"
+		},
+		"SqlServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer1'"
+		},
+		"adls_lnk_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'adls_lnk'"
+		},
+		"adlsgen2_3_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'adlsgen2_3'"
+		},
+		"asql_lnk_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'asql_lnk'"
+		},
+		"azsql_3_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'azsql_3'"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "LOKESH"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorks2022"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "lokeshh"
+		},
+		"adls_lnk_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://lokeshadlsgen2.dfs.core.windows.net/"
+		},
+		"adlsgen2_3_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://lokeshgen23.dfs.core.windows.net/"
+		},
+		"asql_lnk_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "lokeshserver123.database.windows.net"
+		},
+		"asql_lnk_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "LokeshDB1"
+		},
+		"asql_lnk_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "lokeshadmin1"
+		},
+		"azsql_3_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "lokeshserver7799.database.windows.net"
+		},
+		"azsql_3_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "lokeshDB3"
+		},
+		"azsql_3_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "lokeshadmin77"
+		},
+		"event_trigger_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/6f4ad508-257c-4dfb-865e-58afc9874f5b/resourceGroups/lokesh-rg12/providers/Microsoft.Storage/storageAccounts/lokeshgen23"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "Lokesh3-df_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"adls_lnk_accountKey": {
+						"value": "[parameters('adls_lnk_accountKey')]"
+					},
+					"adlsgen2_3_accountKey": {
+						"value": "[parameters('adlsgen2_3_accountKey')]"
+					},
+					"asql_lnk_password": {
+						"value": "[parameters('asql_lnk_password')]"
+					},
+					"azsql_3_password": {
+						"value": "[parameters('azsql_3_password')]"
+					},
+					"adls_lnk_properties_typeProperties_url": {
+						"value": "[parameters('adls_lnk_properties_typeProperties_url')]"
+					},
+					"adlsgen2_3_properties_typeProperties_url": {
+						"value": "[parameters('adlsgen2_3_properties_typeProperties_url')]"
+					},
+					"asql_lnk_properties_typeProperties_server": {
+						"value": "[parameters('asql_lnk_properties_typeProperties_server')]"
+					},
+					"asql_lnk_properties_typeProperties_database": {
+						"value": "[parameters('asql_lnk_properties_typeProperties_database')]"
+					},
+					"asql_lnk_properties_typeProperties_userName": {
+						"value": "[parameters('asql_lnk_properties_typeProperties_userName')]"
+					},
+					"azsql_3_properties_typeProperties_server": {
+						"value": "[parameters('azsql_3_properties_typeProperties_server')]"
+					},
+					"azsql_3_properties_typeProperties_database": {
+						"value": "[parameters('azsql_3_properties_typeProperties_database')]"
+					},
+					"azsql_3_properties_typeProperties_userName": {
+						"value": "[parameters('azsql_3_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "Lokesh3-df_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"SqlServer1_password": {
+						"value": "[parameters('SqlServer1_password')]"
+					},
+					"SqlServer1_properties_typeProperties_server": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_server')]"
+					},
+					"SqlServer1_properties_typeProperties_database": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_database')]"
+					},
+					"SqlServer1_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'Lokesh3-df_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "Lokesh3-df_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"event_trigger_properties_typeProperties_scope": {
+						"value": "[parameters('event_trigger_properties_typeProperties_scope')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'Lokesh3-df_ArmTemplate_1')]"
+			]
+		}
+	]
+}

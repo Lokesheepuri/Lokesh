@@ -1,0 +1,60 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "Lokesh3-df"
+		},
+		"SqlServer1_password": {
+			"value": ""
+		},
+		"adls_lnk_accountKey": {
+			"value": ""
+		},
+		"adlsgen2_3_accountKey": {
+			"value": ""
+		},
+		"asql_lnk_password": {
+			"value": ""
+		},
+		"azsql_3_password": {
+			"value": ""
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"value": "LOKESH"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"value": "AdventureWorks2022"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"value": "lokeshh"
+		},
+		"adls_lnk_properties_typeProperties_url": {
+			"value": "https://lokeshadlsgen2.dfs.core.windows.net/"
+		},
+		"adlsgen2_3_properties_typeProperties_url": {
+			"value": "https://lokeshgen23.dfs.core.windows.net/"
+		},
+		"asql_lnk_properties_typeProperties_server": {
+			"value": "lokeshserver123.database.windows.net"
+		},
+		"asql_lnk_properties_typeProperties_database": {
+			"value": "LokeshDB1"
+		},
+		"asql_lnk_properties_typeProperties_userName": {
+			"value": "lokeshadmin1"
+		},
+		"azsql_3_properties_typeProperties_server": {
+			"value": "lokeshserver7799.database.windows.net"
+		},
+		"azsql_3_properties_typeProperties_database": {
+			"value": "lokeshDB3"
+		},
+		"azsql_3_properties_typeProperties_userName": {
+			"value": "lokeshadmin77"
+		},
+		"event_trigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/6f4ad508-257c-4dfb-865e-58afc9874f5b/resourceGroups/lokesh-rg12/providers/Microsoft.Storage/storageAccounts/lokeshgen23"
+		}
+	}
+}
